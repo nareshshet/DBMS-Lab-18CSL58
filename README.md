@@ -1,55 +1,118 @@
+# PART-A: SQL Programming (Max. Exam Mks. 50)
 
-# RAILWAY SYSTEM MANAGMENT
+•Design, develop, and implement the specified queries for the following problems using Oracle, MySQL, MS SQL Server, or any other DBMS under LINUX/Windows environment.
 
-Railway Reservation” is the system where the users can reserve the railway seats. This is the web browser where they can reserve it online. Designed a Railway ticket booking, reservation, and cancellation system for users that wish to travel via the Railways. It is written in HTML, CSS, PHP and uses MYSQL database.
+•Create Schema and insert at least 5 records for each table. Add appropriate database constraints.
 
+# Lab Experiments:
+## Part A: SQL Programming
 
-## AUTHORS
+1 -  Consider the following schema for a Library Database:
+BOOK(Book_id, Title, Publisher_Name, Pub_Year)
+BOOK_AUTHORS(Book_id, Author_Name)
+PUBLISHER(Name, Address, Phone)
+BOOK_COPIES(Book_id, Branch_id, No-of_Copies)
+BOOK_LENDING(Book_id, Branch_id, Card_No, Date_Out, Due_Date)
+LIBRARY_BRANCH(Branch_id, Branch_Name, Address)
 
-- Naresh Shet [@nareshshet](https://www.github.com/nareshshet)
-- Rakesh U [@rakesh-u09](https://www.github.com/rakesh-u09)
+Write SQL queries to
 
+1.	Retrieve details of all books in the library – id, title, name of publisher, authors, number of copies in each branch, etc.
 
+2.	Get the particulars of borrowers who have borrowed more than 3 books, but from Jan 2017 to Jun 2017.
 
-## 🚀 About the Project
-The Railway Reservation System facilitates the passengers to enquireabout the trains available on the basis of source and destination, Booking and Cancellation of tickets, enquire about the status of the booked ticket, ete. The aim of case study is todesignand develop a database maintaining the records of different trains, train status, and passengers.
+3.	Delete a book in BOOK table. Update the contents of other tables to reflect this data manipulation operation.
 
-This project contains Introduction to the Railways reservation system It is the computerized system of reserving the seats of train seats in advanced. It is mainlyusedforlong route. On-line reservation has made the process for the reservation of seats verymucheasier than ever before. In our country India, there are number of counters for the reservation of the seatsandone can easily make reservations and get tickets. Then this project contains entity relationship model diagram based on railway reservation system and introduction to relation model .Thereis also design of the database of the railway reservation system based on relationmodel.Example of some SQL queries to retrieves data from rail management database.
+4.	Partition the BOOK table based on year of publication. Demonstrate its working with a simple query.
 
-
-## PREREQUISITES
-
-- install xampp
-- Clone this repository into xampp/htdocs
-- Read superstore.sql file to setup the datab
-
-## ER DIAGRAM
-![image](https://user-images.githubusercontent.com/64298708/161045093-53527d5e-3630-4735-beab-68d2d8d89c48.png)
-## SCHEMA DIAGRAM
-![image](https://user-images.githubusercontent.com/64298708/161045204-4db8f60d-804f-4710-b6cd-269cd34ea79f.png)
-
-
-## SCREENSHOTS
+5.	Create a view of all books and its number of copies that are currently available in the Library.
 
 
+2 - Consider the following schema for Order Database:
+SALESMAN(Salesman_id, Name, City, Commission)
+CUSTOMER(Customer_id, Cust_Name, City, Grade, Salesman_id)
+ORDERS(Ord_No, Purchase_Amt, Ord_Date, Customer_id, Salesman_id)
 
-### Home Page
+Write SQL queries to
 
-![image](https://user-images.githubusercontent.com/64298708/161044411-50a321f9-8cdd-41e5-80a8-6fa12fe68440.png)
-### Train Details
-![image](https://user-images.githubusercontent.com/64298708/161044623-cea2b9af-8705-482c-8f68-ad0d62f33276.png)
+1. Count the customers with grades above Bangalore’s average.
+
+2. Find the name and numbers of all salesman who had more than one customer.
+
+3. List all the salesman and indicate those who have and don’t have customers in
+their cities (Use UNION operation.)
+
+4. Create a view that finds the salesman who has the customer with the highest
+order of a day.
+
+5. Demonstrate the DELETE operation by removing salesman with id 1000. All
+his orders must also be deleted.
 
 
-## Documentation
+3 - Consider the schema for Movie Database:
+ACTOR(Act_id, Act_Name, Act_Gender)
+DIRECTOR(Dir_id, Dir_Name, Dir_Phone)
+MOVIES(Mov_id, Mov_Title, Mov_Year, Mov_Lang, Dir_id)
+MOVIE_CAST(Act_id, Mov_id, Role)
+RATING(Mov_id, Rev_Stars)
 
-For PPT and Report(Pdf and doc) 
-Email me  @ nareshshet143@gmail.com
+Write SQL queries to
 
-## Contributing
+1. List the titles of all movies directed by ‘Hitchcock’.
 
-Contributions are always welcome!
+2. Find the movie names where one or more actors acted in two or more movies.
 
-See `contributing.md` for ways to get started.
+3. List all actors who acted in a movie before 2000 and also in a movie after 2015 (use JOIN operation).
 
-Please adhere to this project's `code of conduct`.
+4. Find the title of movies and number of stars for each movie that has at least one rating and find the highest number of stars that movie received. Sort the result by movie title.
 
+5. Update rating of all movies directed by ‘Steven Spielberg’ to 5.
+
+
+4 - Consider the schema for College Database:
+STUDENT(USN, SName, Address, Phone, Gender)
+SEMSEC(SSID, Sem, Sec)
+CLASS(USN, SSID)
+SUBJECT(Subcode, Title, Sem, Credits)
+IAMARKS(USN, Subcode, SSID, Test1, Test2, Test3, FinalIA)
+
+Write SQL queries to
+
+1.	List all the student details studying in fourth semester ‘C’ section.
+
+2. Compute the total number of male and female students in each semester and in each section.
+
+3. Create a view of Test1 marks of student USN ‘1BI15CS101’ in all subjects.
+
+4. Calculate the FinalIA (average of best two test marks) and update the corresponding table for all students.
+
+5. Categorize students based on the following criterion:
+If FinalIA = 17 to 20 then CAT = ‘Outstanding’
+If FinalIA = 12 to 16 then CAT = ‘Average’
+If FinalIA< 12 then CAT = ‘Weak’
+Give these details only for 8th semester A,B, and C section students.
+
+
+5 - Consider the schema for Company Database:
+EMPLOYEE(SSN, Name, Address, Sex, Salary, SuperSSN, DNo)
+DEPARTMENT(DNo, DName, MgrSSN, MgrStartDate)
+DLOCATION(DNo,DLoc)
+PROJECT(PNo, PName, PLocation, DNo)
+WORKS_ON(SSN, PNo, Hours)
+
+Write SQL queries to
+
+1. Make a list of all project numbers for projects that involve an employee whose last name is ‘Scott’, either as a worker or as a manager of the department that controls the project.
+
+2. Show the resulting salaries if every employee working on the ‘IoT’ project is given a 10 percent raise.
+
+3. Find the sum of the salaries of all employees of the ‘Accounts’ department, as well as the maximum salary, the minimum salary, and the average salary in this department
+
+4. Retrieve the name of each employee who works on all the projects controlledby department number 5 (use NOT EXISTS operator).
+
+5. For each department that has more than five employees, retrieve the department number and the number of its employees who are making more than Rs. 6,00,000.
+
+## Part B: Mini project
+•For any problem selected, write the ER Diagram, apply ER-mapping rules, normalize the relations, and follow the application development process.
+•Make sure that the application should have five or more tables, at least one trigger and one stored procedure, using suitable frontend tool.
+•Indicative areas include; health care, education, industry, transport, supply chain, etc.
